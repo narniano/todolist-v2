@@ -14,9 +14,12 @@ app.use(express.static("public"));
 
 const connectToMongo = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/todolistDB", {
-      useNewUrlParser: true,
-    });
+    await mongoose.connect(
+      "mongodb+srv://rilsonjoas10:r4FbzoysDdVvu27W@cluster0.aeyrby2.mongodb.net/todolistDB",
+      {
+        useNewUrlParser: true,
+      }
+    );
     console.log("connected to MongoDB");
   } catch (error) {
     console.log("error connection to MongoDB:", error.message);
