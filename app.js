@@ -60,7 +60,7 @@ app.get("/", async function (req, res) {
   if (foundItens.length === 0) {
     Item.insertMany(defaultItems);
   } else {
-    res.render("list", { listTitle: "Today", newListItems: foundItens });
+    res.render("list.ejs", { listTitle: "Today", newListItems: foundItens });
   }
 });
 
@@ -68,7 +68,7 @@ app.get("/:customListName", async function (req, res) {
   const customListName = _.capitalize(req.params.customListName);
   try {
     const foundItem = await List.findOne({ name: customListName });
-    res.render("list", {
+    res.render("list.ejs", {
       listTitle: foundItem.name,
       newListItems: foundItem.items,
     });
@@ -128,7 +128,7 @@ app.post("/delete", async function (req, res) {
 });
 
 app.get("/about", function (req, res) {
-  res.render("about");
+  res.render("about.ejs");
 });
 
 app.listen(3000, function () {
