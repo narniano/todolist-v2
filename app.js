@@ -15,7 +15,7 @@ app.use(express.static("public"));
 const connectToMongo = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://rilsonjoas10:r4FbzoysDdVvu27W@cluster0.aeyrby2.mongodb.net/todolistDB",
+      "mongodb+srv://rilsonjoas10:r4FbzoysDdVvu27W@cluster0.aeyrby2.mongodb.net/blogDB",
       {
         useNewUrlParser: true,
       }
